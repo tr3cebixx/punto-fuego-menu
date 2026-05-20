@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú — Punto Fuego</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro: #0a0a0a;
+    --negro-card: #111111;
+    --negro-hover: #1a1a1a;
+    --dorado: #c9a84c;
+    --dorado-claro: #e8c96e;
+    --dorado-oscuro: #8a6d28;
+    --rojo: #8b1a1a;
+    --rojo-claro: #c0392b;
+    --rojo-sangre: #a61c1c;
+    --blanco: #f5f0e8;
+    --blanco-apagado: #d4cfc4;
+    --gris: #2a2a2a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-family: 'Crimson Pro', Georgia, serif;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+  }
+
+  .header {
+    text-align: center;
+    padding: 3rem 1.5rem 2rem;
+    border-bottom: 1px solid var(--dorado-oscuro);
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dorado), transparent);
+    margin: 0.5rem auto;
+    width: 60%;
+  }
+  .logo-linea {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 700;
+    color: var(--dorado);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .logo-subtitulo {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    color: var(--blanco-apagado);
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    margin-top: 0.5rem;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.97);
+    border-bottom: 1px solid var(--dorado-oscuro);
+    padding: 0.6rem 1rem;
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    color: var(--blanco-apagado);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: var(--dorado); border-color: var(--dorado-oscuro); }
+  nav a.bebidas-link { color: #d47070; }
+  nav a.bebidas-link:hover { color: var(--rojo-claro); border-color: var(--rojo); }
+
+  .contenido {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .seccion { margin-top: 2.5rem; }
+
+  .titulo-seccion {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.3rem, 5vw, 2rem);
+    font-weight: 600;
+    color: var(--dorado);
+    text-align: center;
+    letter-spacing: 0.12em;
+    padding: 0.6rem 0;
+    position: relative;
+    margin-bottom: 0.3rem;
+  }
+  .titulo-seccion::before, .titulo-seccion::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dorado-oscuro), transparent);
+  }
+  .titulo-seccion::before { top: 0; }
+  .titulo-seccion::after { bottom: 0; }
+
+  .titulo-seccion.bebidas { color: var(--rojo-claro); }
+  .titulo-seccion.bebidas::before,
+  .titulo-seccion.bebidas::after {
+    background: linear-gradient(90deg, transparent, var(--rojo), transparent);
+  }
+
+  .subtitulo-nota {
+    text-align: center;
+    font-style: italic;
+    color: var(--blanco-apagado);
+    font-size: 0.88rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+  }
+  .subtitulo-nota.rojo { color: #e05555; }
+
+  .sub-seccion { margin-top: 1.8rem; }
+  .titulo-sub {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    color: var(--dorado-claro);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gris);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .titulo-sub.rojo { color: #e05555; border-bottom-color: var(--rojo); }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.8rem;
+    padding: 0.65rem 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.15s;
+    border-radius: 2px;
+  }
+  .item:hover { background: rgba(201,168,76,0.04); }
+
+  .item-izq { flex: 1; min-width: 0; }
+  .item-nombre {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--blanco);
+    line-height: 1.2;
+  }
+  .item-nombre.apagado { color: var(--blanco-apagado); }
+  .item-desc {
+    font-size: 0.85rem;
+    color: var(--blanco-apagado);
+    font-style: italic;
+    margin-top: 0.15rem;
+    line-height: 1.4;
+  }
+  .item-precio {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--dorado);
+    white-space: nowrap;
+    font-weight: 400;
+  }
+  .item-precio.rojo { color: #e05555; }
+
+  .precio-doble {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.1rem;
+  }
+  .precio-doble span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    color: var(--dorado);
+    white-space: nowrap;
+  }
+
+  .tenedor-libre-box {
+    background: linear-gradient(135deg, #1a1200, #0f0f0f);
+    border: 1px solid var(--dorado-oscuro);
+    border-radius: 4px;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .tenedor-libre-box .tl-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: var(--dorado-oscuro);
+    text-transform: uppercase;
+  }
+  .tenedor-libre-box .tl-precio {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--dorado);
+    margin-top: 0.2rem;
+  }
+  .tenedor-libre-box .tl-menor {
+    margin-top: 0.5rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.9rem;
+    color: var(--blanco-apagado);
+    letter-spacing: 0.05em;
+  }
+  .tenedor-libre-box .tl-menor span { color: var(--dorado); }
+
+  .compartir-nota {
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    color: var(--dorado-oscuro);
+    font-family: 'Cinzel', serif;
+    margin-bottom: 0.8rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2rem;
+  }
+  @media (max-width: 600px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    font-size: 0.78rem;
+    color: var(--dorado-oscuro);
+    letter-spacing: 0.1em;
+    border-top: 1px solid var(--gris);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+  }
+
+  .ornamento {
+    text-align: center;
+    color: var(--dorado-oscuro);
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
+    letter-spacing: 0.5em;
+  }
+
+  .badge-vegana {
+    display: inline-block;
+    font-size: 0.65rem;
+    background: rgba(99,153,34,0.15);
+    color: #7fb83a;
+    border: 1px solid rgba(99,153,34,0.3);
+    border-radius: 2px;
+    padding: 1px 6px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* Estado de carga */
+  #loading {
+    text-align: center;
+    padding: 4rem 1rem;
+    font-family: 'Cinzel', serif;
+    color: var(--dorado-oscuro);
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-subtitulo">PUNTO FUEGO - BAR - PARRILLA</div>
+  <div class="ornamento">✦ ✦ ✦</div>
+  <div class="logo-linea">Menú</div>
+  <div class="ornamento">✦ ✦ ✦</div>
+</header>
+
+<nav>
+  <a href="#tenedor-libre">Tenedor Libre</a>
+  <a href="#entradas">Entradas</a>
+  <a href="#guarniciones">Guarniciones</a>
+  <a href="#pastas">Pastas</a>
+  <a href="#para-compartir" class="bebidas-link">Para Compartir</a>
+  <a href="#parrilla">Parrilla</a>
+  <a href="#menu-infantil">Menú Infantil</a>
+  <a href="#platos">Platos Principales</a>
+  <a href="#hamburguesas">Hamburguesas</a>
+  <a href="#postres">Postres</a>
+  <a href="#cervezas" class="bebidas-link">Cervezas</a>
+  <a href="#vinos" class="bebidas-link">Vinos</a>
+  <a href="#tragos" class="bebidas-link">Tragos</a>
+  <a href="#sinAlcohol" class="bebidas-link">Sin Alcohol</a>
+</nav>
+
+<div class="contenido">
+  <div id="loading">Cargando menú...</div>
+</div>
+
+<footer>
+  <div class="ornamento" style="margin-bottom:0.5rem">✦ ✦ ✦</div>
+  Los precios están expresados en pesos argentinos e incluyen IVA.
+</footer>
+
+<script>
+// ─── HELPERS ────────────────────────────────────────────────────────────────
+
+function item(nombre, desc, precio, opts = {}) {
+  const precioClass = opts.rojoPrecio ? 'item-precio rojo' : 'item-precio';
+  const nombreClass = opts.apagado ? 'item-nombre apagado' : 'item-nombre';
+  const vegana = opts.vegana ? '<span class="badge-vegana">vegana</span>' : '';
+
+  if (opts.precioDoble) {
+    const spans = opts.precioDoble.map(p => `<span>${p}</span>`).join('');
+    return `
+      <div class="item">
+        <div class="item-izq">
+          <div class="${nombreClass}">${nombre}${vegana}</div>
+          ${desc ? `<div class="item-desc">${desc}</div>` : ''}
+        </div>
+        <div class="precio-doble">${spans}</div>
+      </div>`;
+  }
+
+  return `
+    <div class="item">
+      <div class="item-izq">
+        <div class="${nombreClass}">${nombre}${vegana}</div>
+        ${desc ? `<div class="item-desc">${desc}</div>` : ''}
+      </div>
+      <div class="${precioClass}">${precio || ''}</div>
+    </div>`;
+}
+
+function renderItems(arr, opts = {}) {
+  return arr.map(i => {
+    if (i.precio_doble) return item(i.nombre, i.desc || '', '', { precioDoble: i.precio_doble });
+    return item(i.nombre, i.desc || '', i.precio || '', { rojoPrecio: opts.rojo, apagado: i.apagado, vegana: i.vegana });
+  }).join('');
+}
+
+function grid2(left, right) {
+  return `<div class="grid-2"><div>${left}</div><div>${right}</div></div>`;
+}
+
+function seccion(id, titulo, contenido, opts = {}) {
+  const bebidasClass = opts.bebidas ? ' bebidas' : '';
+  const subtitulo = opts.subtitulo
+    ? `<p class="subtitulo-nota${opts.subtituloRojo ? ' rojo' : ''}">${opts.subtitulo}</p>`
+    : '';
+  return `
+    <section class="seccion" id="${id}">
+      <h2 class="titulo-seccion${bebidasClass}">${titulo}</h2>
+      <div class="compartir-nota">✦ ✦ ✦</div>
+      ${subtitulo}
+      ${contenido}
+    </section>`;
+}
+
+// ─── RENDER ─────────────────────────────────────────────────────────────────
+
+function renderMenu(m) {
+  const contenido = document.querySelector('.contenido');
+
+  // TENEDOR LIBRE
+  const tl = m.tenedor_libre;
+  const tlIncluye = tl.incluye.map(i =>
+    item(i.nombre, i.desc || '', '')
+  ).join('');
+  const tlNoIncluye = tl.no_incluye.map(i =>
+    item(i.nombre, '', '', { apagado: true })
+  ).join('');
+
+  const tenedorHTML = seccion('tenedor-libre', 'Tenedor Libre', `
+    <div class="tenedor-libre-box">
+      <div class="tl-label">Precio por persona</div>
+      <div class="tl-precio">${tl.precio}</div>
+      <div class="tl-menor">Menores de 10 años &nbsp;·&nbsp; <span>${tl.precio_menor}</span></div>
+    </div>
+    ${grid2(
+      `<div class="titulo-sub">Incluye</div>${tlIncluye}`,
+      `<div class="titulo-sub" style="color:#e05555;border-bottom-color:var(--rojo)">No incluye</div>${tlNoIncluye}`
+    )}`
+  );
+
+  // ENTRADAS
+  const entradasHTML = seccion('entradas', 'Entradas',
+    renderItems(m.entradas)
+  );
+
+  // GUARNICIONES
+  const mitad = Math.ceil(m.guarniciones.length / 2);
+  const guarnHTML = seccion('guarniciones', 'Guarniciones',
+    grid2(
+      renderItems(m.guarniciones.slice(0, mitad)),
+      renderItems(m.guarniciones.slice(mitad))
+    )
+  );
+
+  // PASTAS
+  const pastasHTML = seccion('pastas', 'Pastas', `
+    ${renderItems(m.pastas.platos)}
+    <div class="sub-seccion">
+      <div class="titulo-sub">Opción sin TACC / Vegana</div>
+      ${renderItems(m.pastas.sin_tacc)}
+    </div>
+    <div class="sub-seccion">
+      <div class="titulo-sub">Salsas</div>
+      ${grid2(
+        renderItems(m.pastas.salsas.slice(0, 4)),
+        renderItems(m.pastas.salsas.slice(4))
+      )}
+    </div>
+  `);
+
+  // PARA COMPARTIR
+  const compartirHTML = `
+    <section class="seccion" id="para-compartir">
+      <div class="titulo-seccion">Para Compartir</div>
+      <div class="compartir-nota">✦ De lunes a jueves ✦</div>
+      ${renderItems(m.para_compartir)}
+    </section>`;
+
+  // PARRILLA
+  const parrillaHTML = seccion('parrilla', 'Parrilla',
+    renderItems(m.parrilla.items)
+  );
+
+  // MENU INFANTIL
+  const infantilHTML = seccion('menu-infantil', 'Menú Infantil',
+    renderItems(m.menu_infantil)
+  );
+
+  // PLATOS PRINCIPALES
+  const platosHTML = seccion('platos', 'Platos Principales',
+    renderItems(m.platos_principales)
+  );
+
+  // HAMBURGUESAS
+  const hambHTML = seccion('hamburguesas', 'Hamburguesas',
+    renderItems(m.hamburguesas.items)
+  );
+
+  // POSTRES
+  const mitadP = Math.ceil(m.postres.length / 2);
+  const postresHTML = seccion('postres', 'Postres', `
+    ${renderItems(m.postres.slice(0, 3))}
+    ${grid2(
+      renderItems(m.postres.slice(3, mitadP + 1)),
+      renderItems(m.postres.slice(mitadP + 1))
+    )}`
+  );
+
+  // BEBIDAS
+  const mitadC = Math.ceil(m.cervezas.length / 2);
+  const bebidasHTML = `
+    <section class="seccion" id="cervezas">
+      <h2 class="titulo-seccion bebidas">Bebidas</h2>
+      <div class="compartir-nota">✦ ✦ ✦</div>
+
+      <div class="sub-seccion">
+        <div class="titulo-sub rojo">Cervezas</div>
+        ${grid2(
+          renderItems(m.cervezas.slice(0, mitadC), { rojo: true }),
+          renderItems(m.cervezas.slice(mitadC), { rojo: true })
+        )}
+      </div>
+
+      <div class="sub-seccion" id="vinos">
+        <div class="titulo-sub rojo">Vinos</div>
+        ${grid2(`
+          <div class="titulo-sub" style="font-size:0.75rem;letter-spacing:0.2em;color:var(--blanco-apagado);border:none;margin-bottom:0.5rem">MALBEC</div>
+          ${renderItems(m.vinos.malbec, { rojo: true })}
+        `, `
+          <div class="titulo-sub" style="font-size:0.75rem;letter-spacing:0.2em;color:var(--blanco-apagado);border:none;margin-bottom:0.5rem">BLANCO</div>
+          ${renderItems(m.vinos.blanco, { rojo: true })}
+        `)}
+      </div>
+
+      <div class="sub-seccion">
+        <div class="titulo-sub rojo">Champagne & Sidra</div>
+        ${grid2(
+          renderItems(m.champagne.slice(0, 2), { rojo: true }),
+          renderItems(m.champagne.slice(2), { rojo: true })
+        )}
+      </div>
+
+      <div class="sub-seccion" id="sinAlcohol">
+        <div class="titulo-sub rojo">Sin alcohol</div>
+        ${grid2(
+          renderItems(m.sin_alcohol.slice(0, 6), { rojo: true }),
+          renderItems(m.sin_alcohol.slice(6), { rojo: true })
+        )}
+      </div>
+    </section>`;
+
+  // TRAGOS
+  const mitadT = (Math.ceil(m.tragos.length / 2))-1;
+  const tragosHTML = `
+    <section class="seccion" id="tragos">
+      <h2 class="titulo-seccion bebidas">Carta de Tragos</h2>
+      <div class="compartir-nota">✦ ✦ ✦</div>
+      ${grid2(
+        renderItems(m.tragos.slice(0, mitadT), { rojo: true }),
+        renderItems(m.tragos.slice(mitadT), { rojo: true })
+      )}
+    </section>`;
+
+  contenido.innerHTML =
+    tenedorHTML + entradasHTML + guarnHTML + pastasHTML + compartirHTML +
+    parrillaHTML + infantilHTML + platosHTML + hambHTML + postresHTML +
+    bebidasHTML + tragosHTML;
+}
+
+// ─── FETCH JSON ─────────────────────────────────────────────────────────────
+
+fetch('menu.json')
+  .then(r => {
+    if (!r.ok) throw new Error('No se pudo cargar menu.json');
+    return r.json();
+  })
+  .then(data => renderMenu(data))
+  .catch(err => {
+    document.querySelector('.contenido').innerHTML =
+      `<p style="text-align:center;padding:3rem;color:var(--rojo-claro);font-family:'Cinzel',serif;letter-spacing:0.1em">
+        Error al cargar el menú.<br><small style="color:var(--blanco-apagado)">${err.message}</small>
+      </p>`;
+  });
+</script>
+
+</body>
+</html>

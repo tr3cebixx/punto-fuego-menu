@@ -1,0 +1,246 @@
+{
+  "tenedor_libre": {
+    "precio": "$39.000",
+    "precio_menor": "$19.500",
+    "incluye": [
+      { "nombre": "Entrada", "desc": "Picada de fiambres" },
+      { "nombre": "Parrilla" },
+      { "nombre": "Pastas" },
+      { "nombre": "Milanesas" },
+      { "nombre": "Hamburguesas" },
+      { "nombre": "Guarniciones" },
+      { "nombre": "1 postre por persona", "desc": "Budín de pan · Flan · Queso y dulce · Helado" }
+    ],
+    "no_incluye": [
+      { "nombre": "Entraña" },
+      { "nombre": "Molleja" },
+      { "nombre": "Bife de chorizo" },
+      { "nombre": "Brochettes" },
+      { "nombre": "Raviolones de salmón" }
+    ]
+  },
+
+  "entradas": [
+    { "nombre": "Picada", "desc": "Jamón natural, Jamón crudo, Lomito ahumado, Mortadela, Salame Milán, Salame de campo, Variedad de quesos, Cherries, Olivas, Frutos secos y Pan", "precio_doble": ["Para 2  $29.000", "Para 4  $45.000"] },
+    { "nombre": "Picada con calentitos", "desc": "Albóndigas, Papas fritas, Milanesitas de carne, Empanadas fritas de copetin, Muzzarelitas, Tequeños y Mayonesa de limón", "precio_doble": ["Para 2  $34.000", "Para 4  $52.500"] },
+    { "nombre": "Picada del mar", "desc": "Camarones, Rabas, Merluza rebozada, Cornalitos y Papas fritas", "precio_doble": ["Para 2  $45.000"] },
+    { "nombre": "Rabas", "precio": "$24.000" },
+    { "nombre": "Empanadas de carne cortada a cuchillo o JyQ", "desc": "2 unidades", "precio": "$6.000" },
+    { "nombre": "Muzzarelitas con salsa de tomate", "desc": "3 unidades", "precio": "$13.500" },
+    { "nombre": "Provoleta", "precio": "$15.000" },
+    { "nombre": "Provoleta Mediterránea", "desc": "Rúcula, Jamón crudo, Tomates y Aceitunas negras", "precio": "$17.000" },
+    { "nombre": "Provoleta punto fuego", "desc": "Morrón asado, Panceta", "precio": "$17.000" },
+    { "nombre": "Tortilla de papa rellena de jamón y queso", "precio": "$17.000" }
+  ],
+
+  "guarniciones": [
+    { "nombre": "Papas fritas", "precio": "$10.000" },
+    { "nombre": "Papas a la provenzal", "precio": "$10.500" },
+    { "nombre": "Puré de papas o calabaza", "precio": "$9.000" },
+    { "nombre": "Tortilla de papas", "precio": "$11.000" },
+    { "nombre": "Mix de verduras", "precio": "$10.500" },
+    { "nombre": "Ensalada mixta", "precio": "$10.000" },
+    { "nombre": "Rúcula y parmesano", "precio": "$10.500" },
+    { "nombre": "Zanahoria y huevo", "precio": "$10.000" },
+    { "nombre": "Papa, huevo y perejil", "precio": "$10.000" },
+    { "nombre": "Ensalada rusa", "precio": "$10.000" }
+  ],
+
+  "pastas": {
+    "platos": [
+      { "nombre": "Raviolones de salmón con crema de camarones", "desc": "Con masa de tinta de calamar", "precio": "$28.000" },
+      { "nombre": "Sorrentinos de calabaza y parmesano", "desc": "Con masa de espinaca", "precio": "$14.000" },
+      { "nombre": "Sorrentinos de jamón y queso", "precio": "$14.000" },
+      { "nombre": "Sorrentinos caprese", "desc": "Con masa de tomate", "precio": "$14.000" },
+      { "nombre": "Canelones de verdura", "precio": "$12.000" },
+      { "nombre": "Ñoquis", "precio": "$11.000" },
+      { "nombre": "Spaguettis", "precio": "$11.000" },
+      { "nombre": "Lasaña de carne", "precio": "$19.000" }
+    ],
+    "sin_tacc": [
+      { "nombre": "Lasaña de berenjenas", "precio": "$16.000", "vegana": true },
+      { "nombre": "Ravioles de verdura", "precio": "$14.000", "vegana": true }
+    ],
+    "salsas": [
+      { "nombre": "Fileto", "precio": "$8.000" },
+      { "nombre": "Bolognesa", "precio": "$9.000" },
+      { "nombre": "Estofado de carne", "precio": "$10.000" },
+      { "nombre": "Rosa", "precio": "$8.000" },
+      { "nombre": "De hongos", "precio": "$10.000" },
+      { "nombre": "4 Quesos", "precio": "$10.000" },
+      { "nombre": "Crema", "precio": "$8.000" },
+      { "nombre": "Parissiene", "precio": "$10.000" }
+    ]
+  },
+
+  "para_compartir": [
+    { "nombre": "Pollo entero con fritas", "desc": "Para 4 personas", "precio": "$54.000" },
+    { "nombre": "Milanesa XL a caballo con fritas", "desc": "Para 3 personas", "precio": "$39.000" },
+    { "nombre": "Milanesa XL Napo con fritas", "desc": "Para 3 personas", "precio": "$48.000" },
+    { "nombre": "Pizza 8 porciones", "desc": "Muzza, Jamón y morrón, Napolitana", "precio": "$25.000" },
+    { "nombre": "Matambre a la pizza con fritas", "desc": "Para 2 personas", "precio": "$36.000" },
+    { "nombre": "Ravioles de pollo y verdura con Fileto", "desc": "Para 2 personas", "precio": "$26.000" },
+    { "nombre": "Chorizo a la Pomarola con puré", "desc": "Para 2 personas", "precio": "$28.000" }
+  ],
+
+  "parrilla": {
+    "items": [
+      { "nombre": "Parrillada completa", "desc": "Asado de tira o vacío, Pollo, Cerdo, Chori, Morci y Chinchu", "precio_doble": ["Para 2  $63.000", "Para 4  $89.000"] },
+      { "nombre": "Parrillada de achuras", "desc": "Riñón, Chinchu, Chori, Morci, Molleja", "precio": "$49.000" },
+      { "nombre": "Trío Parrillero", "desc": "½ Asado banderita, ½ Entraña, ½ Bife de chorizo", "precio": "$52.000" },
+      { "nombre": "Porción de asado de tira", "precio": "$37.000" },
+      { "nombre": "Porción de vacío", "precio": "$38.000" },
+      { "nombre": "Porción molleja", "precio": "$41.000" },
+      { "nombre": "Bife de chorizo", "desc": "500 gr.", "precio": "$36.000" },
+      { "nombre": "Entraña", "precio": "$45.000" },
+      { "nombre": "Entraña a la pizza", "precio": "$47.000" },
+      { "nombre": "Matambre", "precio": "$30.000" },
+      { "nombre": "Matambre a la pizza", "precio": "$32.000" },
+      { "nombre": "Matambre de cerdo", "precio": "$30.000" },
+      { "nombre": "Matambre de cerdo a la pizza", "precio": "$32.000" },
+      { "nombre": "Bondiola", "precio": "$25.000" },
+      { "nombre": "Pechito", "precio": "$28.000" },
+      { "nombre": "Pata muslo", "precio": "$15.000" },
+      { "nombre": "Chori", "precio": "$10.000" },
+      { "nombre": "Morci", "precio": "$10.000" },
+      { "nombre": "Chinchu", "precio": "$20.000" },
+      { "nombre": "Brochettes de carne, pollo o tofu", "desc": "Con vegetales y salsa de mostaza", "precio": "$20.000" },
+      { "nombre": "Riñón", "precio": "$20.000" }
+    ]
+  },
+
+  "menu_infantil": [
+    { "nombre": "Hamburguesa con queso y papas fritas", "precio": "$11.000" },
+    { "nombre": "Nuggets de pollo caseros con puré", "precio": "$11.000" },
+    { "nombre": "Tallarines con salsa", "precio": "$11.000" },
+    { "nombre": "Salchipapa", "desc": "Salchicha con papas fritas", "precio": "$11.000" }
+  ],
+
+  "platos_principales": [
+    { "nombre": "Milanesa", "desc": "De carne o pollo con fritas", "precio": "$22.000" },
+    { "nombre": "Milanesa Napolitana / Fugazzeta / Roquefort y jamón", "precio": "$26.000" },
+    { "nombre": "Milanesa de ternera a Caballo", "desc": "Con fettucine", "precio": "$28.000" },
+    { "nombre": "Filet a la Romana", "desc": "Con guarnición", "precio": "$26.000" },
+    { "nombre": "Lomo al champignón", "desc": "Lomo sellado en manteca con champignón desglasado con vino blanco, crema de leche, acompañado con papas españolas", "precio": "$29.000" },
+    { "nombre": "Pollo al verdeo", "desc": "Pata muslo o pechuga a las brasas, salsa de verdeo y vino blanco, con guarnición de papas fritas o arroz", "precio": "$24.000" },
+    { "nombre": "Pastel de papas", "desc": "Base de puré de papas con relleno de carne picada, morrón, huevo duro, queso fresco, tapa de puré de papa y queso rallado gratinado", "precio": "$20.000" },
+    { "nombre": "Guiso de lentejas", "precio": "$20.000" },
+    { "nombre": "Wok de spaghettis", "desc": "Cebolla, morrones, zanahoria, zuchini, berenjenas en juliana con spaghettis con pollo o lomo con salsa de soja y semillas de sésamo", "precio": "$20.000" }
+  ],
+
+  "hamburguesas": {
+    "items": [
+      { "nombre": "Cheese burger", "desc": "Cebolla caramelizada, Cheddar x2 y Panceta asada", "precio": "$19.000" },
+      { "nombre": "Punto fuego burger", "desc": "Provoleta, Rúcula, Huevo frito, Panceta ahumada", "precio": "$22.000" },
+      { "nombre": "Doble carne", "desc": "Queso cheddar x4, Cebolla y Ketchup", "precio": "$20.000" },
+      { "nombre": "Carne de cerdo", "desc": "Cebolla caramelizada, Rúcula y Queso azul", "precio": "$19.000" },
+      { "nombre": "Pollo crispy", "desc": "Palta, Tomate y Cebolla morada", "precio": "$19.000" },
+      { "nombre": "Veggie", "desc": "Verduras asadas", "precio": "$19.000" },
+      { "nombre": "Veggie", "desc": "Medallón de lentejas, Zapallo, Zanahoria, Cebolla y Morrón", "precio": "$19.000" }
+    ]
+  },
+
+  "postres": [
+    { "nombre": "Bombón Escocés", "desc": "Helado de chocolate y crema americana con corazón de dulce de leche repostero cubierto con chocolate y maní", "precio": "$6.500" },
+    { "nombre": "Bombón Suizo", "desc": "Helado de dulce de leche y americana cubierto con chocolate", "precio": "$6.500" },
+    { "nombre": "Bombón Split", "desc": "Helado de vainilla con dulce de leche repostero cubierto con chocolate", "precio": "$6.500" },
+    { "nombre": "Almendrado", "precio": "$6.500" },
+    { "nombre": "Frutillas con crema", "precio": "$7.500" },
+    { "nombre": "Budín de pan con DDL o crema", "precio": "$7.700" },
+    { "nombre": "Flan con DDL o crema", "precio": "$7.700" },
+    { "nombre": "Panqueque con dulce de leche", "precio": "$7.700" },
+    { "nombre": "Tiramisu", "precio": "$8.000" },
+    { "nombre": "Queso y dulce", "precio": "$7.500" },
+    { "nombre": "Agregado DDL o crema", "precio": "$2.000" },
+    { "nombre": "Café", "precio": "$8.000" }
+  ],
+
+  "cervezas": [
+    { "nombre": "Corona 330cc", "precio": "$7.000" },
+    { "nombre": "Andes 1lts", "precio": "$13.000" },
+    { "nombre": "Stella 1lts", "precio": "$15.000" },
+    { "nombre": "Brahma 1lts", "precio": "$12.000" },
+    { "nombre": "Budweiser 1lts", "precio": "$12.000" },
+    { "nombre": "Heineken 1lts", "precio": "$15.000" },
+    { "nombre": "Warsteiner 1lts", "precio": "$14.000" },
+    { "nombre": "Miller 1lts", "precio": "$14.000" },
+    { "nombre": "Imperial Negra 1lts", "precio": "$13.000" },
+    { "nombre": "Imperial Rubia 1lts", "precio": "$13.000" },
+    { "nombre": "Imperial IPA 1lts", "precio": "$13.000" },
+    { "nombre": "Heineken Porrón", "precio": "$7.000" },
+    { "nombre": "Blue Moon Porrón", "precio": "$8.000" },
+    { "nombre": "Miller Porrón", "precio": "$6.000" }
+  ],
+
+  "vinos": {
+    "malbec": [
+      { "nombre": "DV Catena", "desc": "Cabernet, Malbec", "precio": "$31.000" },
+      { "nombre": "Piattelli Reserva", "precio": "$28.000" },
+      { "nombre": "Nicasia Red Blend", "precio": "$23.000" },
+      { "nombre": "La Linda, Luigi Bosca", "precio": "$21.500" },
+      { "nombre": "Trumpeter, Rutini", "precio": "$21.000" },
+      { "nombre": "Benjamin Nieto S.", "precio": "$13.000" },
+      { "nombre": "San Felipe Varietal", "precio": "$15.000" },
+      { "nombre": "Cafayate", "precio": "$15.000" },
+      { "nombre": "Copa vino tinto", "precio": "$6.000" }
+    ],
+    "blanco": [
+      { "nombre": "La Linda, Luigi Bosca", "precio": "$19.000" },
+      { "nombre": "Cosecha Tardía", "precio": "$15.500" },
+      { "nombre": "Santa Julia", "precio": "$17.000" },
+      { "nombre": "Copa vino blanco", "precio": "$6.000" }
+    ]
+  },
+
+  "champagne": [
+    { "nombre": "Barón B.", "precio": "$54.000" },
+    { "nombre": "Chandón", "precio": "$42.000" },
+    { "nombre": "Novecentos", "precio": "$20.000" },
+    { "nombre": "Sidra 1888", "precio": "$15.000" }
+  ],
+
+  "sin_alcohol": [
+    { "nombre": "Jarra limonada", "precio": "$18.000" },
+    { "nombre": "Jarra pomelada", "precio": "$18.000" },
+    { "nombre": "Jarra naranja", "precio": "$18.000" },
+    { "nombre": "Pepsi", "precio": "$6.000" },
+    { "nombre": "Pepsi Black", "precio": "$6.000" },
+    { "nombre": "7Up", "precio": "$6.000" },
+    { "nombre": "7Up Free", "precio": "$6.000" },
+    { "nombre": "Mirinda", "precio": "$6.000" },
+    { "nombre": "Paso de los Toros", "precio": "$6.000" },
+    { "nombre": "Agua saborizada", "precio": "$5.000" },
+    { "nombre": "Agua", "precio": "$5.000" },
+    { "nombre": "Agua con gas", "precio": "$5.000" }
+  ],
+
+  "tragos": [
+    { "nombre": "Fernet", "desc": "Fernet Branca, Coca-cola, hielo", "precio": "$13.000" },
+    { "nombre": "Campari", "desc": "Campari, jugo de naranja, hielo", "precio": "$13.000" },
+    { "nombre": "Gancia Batido", "desc": "Gancia, azúcar, limón, hielo (opcional Sprite)", "precio": "$12.500" },
+    { "nombre": "Sex on the Beach", "desc": "Licor de durazno, vodka, jugo de naranja, granadina, con hielo", "precio": "$14.000" },
+    { "nombre": "Cuba Libre", "desc": "Ron Havanna, Coca-cola, con hielo", "precio": "$13.000" },
+    { "nombre": "Negroni", "desc": "Campari, Gin, Vermuth Rosso, Hielo", "precio": "$13.000" },
+    { "nombre": "Vodka Raspberri", "desc": "Absolut raspberri, Speed/Redbull, con hielo", "precio": "$15.000" },
+    { "nombre": "Manhattan", "desc": "Whisky, Vermuth Rosso, Hielo", "precio": "$13.000" },
+    { "nombre": "Cynar", "desc": "Cynar, Pomelo, Fruta, Hielo", "precio": "$12.500" },
+    { "nombre": "Cynar Julep", "desc": "Cynar, Pomelo, Menta y jugo de limón, Hielo", "precio": "$13.000" },
+    { "nombre": "Daikiri", "desc": "Ron, azúcar, fruta y pulpa, hielo (frutilla/durazno/ananá/maracuyá)", "precio": "$13.000" },
+    { "nombre": "Jagger + Redbull", "precio": "$15.000" },
+    { "nombre": "Redbull", "precio": "$7.000" },
+    { "nombre": "Caipirinha", "desc": "Cachaca, Lima, Azúcar, Hielo · opción frutos rojos / maracuyá", "precio": "$13.000" },
+    { "nombre": "Caipiroska", "desc": "Vodka, Lima, Azúcar, Hielo · opción frutos rojos / maracuyá", "precio": "$13.000" },
+    { "nombre": "Caipi Malibú", "desc": "Ron de Coco, Lima, Azúcar, Hielo", "precio": "$13.000" },
+    { "nombre": "Jagerinha", "desc": "Jagermeister, Lima, Azucar, Hielo", "precio": "$13.000" },
+    { "nombre": "Gin Heráclito", "desc": "Gin, Tónica, Hielo (limón/lima/pepino/pomelo)", "precio": "$13.000" },
+    { "nombre": "Gin Beefeater", "desc": "Gin, Tónica, Hielo (limón/lima/pepino/pomelo)", "precio": "$15.000" },
+    { "nombre": "Gin Frutos Rojos", "desc": "Gin Beefeater Pink, Tónica, Frutos Rojos, Hielo", "precio": "$16.000" },
+    { "nombre": "Mojito", "desc": "Ron, Menta, Lima, Azúcar, Hielo", "precio": "$13.000" },
+    { "nombre": "Mojito Frutos Rojos", "desc": "Ron, Menta, Lima, Frutos Rojos, Pulpa de frutilla, Azúcar, Hielo", "precio": "$15.000" },
+    { "nombre": "Mojito Malibú", "desc": "Ron de Coco, Lima, Menta, Azúcar, Hielo", "precio": "$13.000" },
+    { "nombre": "Aperol", "precio": "$15.000" },
+    { "nombre": "Medida Jack Daniels", "precio": "$15.000" },
+    { "nombre": "Medida Red Label", "precio": "$12.000" },
+    { "nombre": "Medida Black Label", "precio": "$15.000" }
+  ]
+}
