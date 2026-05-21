@@ -19,6 +19,10 @@
     --blanco: #f5f0e8;
     --blanco-apagado: #d4cfc4;
     --gris: #2a2a2a;
+    --cafe: #c4853a;
+    --cafe-claro: #e0a95e;
+    --cafe-oscuro: #7a4e20;
+    --cafe-fondo: #0d0906;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -89,6 +93,8 @@
   nav a:hover { color: var(--dorado); border-color: var(--dorado-oscuro); }
   nav a.bebidas-link { color: #d47070; }
   nav a.bebidas-link:hover { color: var(--rojo-claro); border-color: var(--rojo); }
+  nav a.cafe-link { color: #d4a06a; }
+  nav a.cafe-link:hover { color: var(--cafe-claro); border-color: var(--cafe-oscuro); }
 
   .contenido {
     max-width: 900px;
@@ -280,6 +286,39 @@
     vertical-align: middle;
   }
 
+  /* CAFETERÍA */
+  .seccion-cafe {
+    background-color: var(--cafe-fondo);
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(196,133,58,0.03) 0px,
+      rgba(196,133,58,0.03) 1px,
+      transparent 1px,
+      transparent 12px
+    );
+    border-top: 1px solid var(--cafe-oscuro);
+    border-bottom: 1px solid var(--cafe-oscuro);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0 1rem 2rem;
+    border-radius: 2px;
+  }
+  .titulo-seccion.cafe {
+    color: var(--cafe-claro);
+  }
+  .titulo-seccion.cafe::before,
+  .titulo-seccion.cafe::after {
+    background: linear-gradient(90deg, transparent, var(--cafe-oscuro), transparent);
+  }
+  .titulo-sub.cafe {
+    color: var(--cafe-claro);
+    border-bottom-color: var(--cafe-oscuro);
+  }
+  .item-precio.cafe { color: var(--cafe-claro); }
+  .ornamento.cafe { color: var(--cafe-oscuro); }
+  .seccion-cafe .item:hover { background: rgba(196,133,58,0.05); }
+  .seccion-cafe .subtitulo-nota { color: #b89070; }
+
   /* Estado de carga */
   #loading {
     text-align: center;
@@ -315,6 +354,7 @@
   <a href="#vinos" class="bebidas-link">Vinos</a>
   <a href="#tragos" class="bebidas-link">Tragos</a>
   <a href="#sinAlcohol" class="bebidas-link">Sin Alcohol</a>
+  <a href="#cafeteria" class="cafe-link">Cafetería</a>
 </nav>
 
 <div class="contenido">
@@ -330,7 +370,7 @@
 // ─── HELPERS ────────────────────────────────────────────────────────────────
 
 function item(nombre, desc, precio, opts = {}) {
-  const precioClass = opts.rojoPrecio ? 'item-precio rojo' : 'item-precio';
+  const precioClass = opts.rojoPrecio ? 'item-precio rojo' : opts.cafePrecio ? 'item-precio cafe' : 'item-precio';
   const nombreClass = opts.apagado ? 'item-nombre apagado' : 'item-nombre';
   const vegana = opts.vegana ? '<span class="badge-vegana">vegana</span>' : '';
 
@@ -359,7 +399,14 @@ function item(nombre, desc, precio, opts = {}) {
 function renderItems(arr, opts = {}) {
   return arr.map(i => {
     if (i.precio_doble) return item(i.nombre, i.desc || '', '', { precioDoble: i.precio_doble });
-    return item(i.nombre, i.desc || '', i.precio || '', { rojoPrecio: opts.rojo, apagado: i.apagado, vegana: i.vegana });
+    const precioClass = opts.rojo ? true : false;
+    const cafePrice = opts.cafe ? 'cafe' : null;
+    return item(i.nombre, i.desc || '', i.precio || '', {
+      rojoPrecio: precioClass,
+      cafePrecio: cafePrice,
+      apagado: i.apagado,
+      vegana: i.vegana
+    });
   }).join('');
 }
 
@@ -530,10 +577,38 @@ function renderMenu(m) {
       )}
     </section>`;
 
+  // CAFETERÍA
+  const c = m.cafeteria;
+  const cafeHTML = `
+    <section class="seccion seccion-cafe" id="cafeteria">
+      <h2 class="titulo-seccion cafe">Cafetería</h2>
+      <div class="ornamento cafe">✦ ✦ ✦</div>
+
+      <div class="sub-seccion">
+        <div class="titulo-sub cafe">Café</div>
+        ${renderItems(c.cafe, { cafe: true })}
+      </div>
+
+      <div class="sub-seccion">
+        <div class="titulo-sub cafe">Delicias Dulces</div>
+        ${renderItems(c.dulces, { cafe: true })}
+      </div>
+
+      <div class="sub-seccion">
+        <div class="titulo-sub cafe">Delicias Saladas</div>
+        ${renderItems(c.saladas, { cafe: true })}
+      </div>
+
+      <div class="sub-seccion">
+        <div class="titulo-sub cafe">Promos Merienda & Combos</div>
+        ${renderItems(c.combos, { cafe: true })}
+      </div>
+    </section>`;
+
   contenido.innerHTML =
     tenedorHTML + entradasHTML + guarnHTML + pastasHTML + compartirHTML +
     parrillaHTML + infantilHTML + platosHTML + hambHTML + postresHTML +
-    bebidasHTML + tragosHTML;
+    bebidasHTML + tragosHTML + cafeHTML;
 }
 
 // ─── FETCH JSON ─────────────────────────────────────────────────────────────

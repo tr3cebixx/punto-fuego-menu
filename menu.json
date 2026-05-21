@@ -242,5 +242,43 @@
     { "nombre": "Medida Jack Daniels", "precio": "$15.000" },
     { "nombre": "Medida Red Label", "precio": "$12.000" },
     { "nombre": "Medida Black Label", "precio": "$15.000" }
-  ]
+  ],
+
+  "cafeteria": {
+    "cafe": [
+      { "nombre": "Café — Pocillo", "precio": "$2.500" },
+      { "nombre": "Café — Jarrito", "precio": "$3.000" },
+      { "nombre": "Café — Doble", "precio": "$4.000" },
+      { "nombre": "Café — XL", "precio": "$5.000" },
+      { "nombre": "Té saborizado", "precio": "$2.000" }
+    ],
+    "dulces": [
+      { "nombre": "CheeseCake de Frutos Rojos", "precio": "$10.000" },
+      { "nombre": "CheeseCake de Oreo", "precio": "$10.000" },
+      { "nombre": "Chocotorta", "precio": "$10.000" },
+      { "nombre": "Tentación", "desc": "Bizcochuelo de chocolate, relleno de DDL y crema Bariloche", "precio": "$10.000" },
+      { "nombre": "Tiramisú", "precio": "$10.000" },
+      { "nombre": "Panqueques con Dulce de Leche", "precio": "$8.000" },
+      { "nombre": "Rogel", "precio": "$5.000" },
+      { "nombre": "Budines", "desc": "Consultar variedad", "precio": "$4.000" },
+      { "nombre": "Medialunas", "precio": "$2.000" },
+      { "nombre": "Medialunas J y Q", "precio": "$4.000" }
+    ],
+    "saladas": [
+      { "nombre": "Tostadas en pan blanco", "desc": "Con mermelada y queso crema", "precio": "$4.000" },
+      { "nombre": "Tostados J y Q", "precio": "$5.000" },
+      { "nombre": "Chipá saborizado", "desc": "2 unidades", "precio": "$3.000" },
+      { "nombre": "Bruschettas", "desc": "Huevo revuelto y palta · Jamón crudo, rúcula y cherrys · Jamón cocido, queso y cherrys", "precio": "$10.000" },
+      { "nombre": "Bagels", "desc": "Rúcula, jamón crudo y huevo · Lomito, lechuga, huevo y cheddar", "precio": "$12.000" }
+    ],
+    "combos": [
+      { "nombre": "Combo Express", "desc": "Infusión + 2 medialunas", "precio": "$5.000" },
+      { "nombre": "Combo Clásico", "desc": "Infusión + 2 tostados / medialunas J y Q", "precio": "$8.000" },
+      { "nombre": "Combo Completo", "desc": "Infusión + jugo de naranja + 2 medialunas / tostados J y Q", "precio": "$10.000" },
+      { "nombre": "Combo Energía", "desc": "Infusión + jugo de naranja + tostón con huevo y palta", "precio": "$16.000" },
+      { "nombre": "Combo Tentación", "desc": "Infusión + jugo de naranja + porción de torta", "precio": "$16.000" },
+      { "nombre": "Combo para Compartir", "desc": "2 infusiones + 2 medialunas + 2 tostados + jugo de naranja + porción de torta", "precio": "$25.000" },
+      { "nombre": "Combo Infantil", "desc": "Chocolatada caliente o fría + donas bañadas", "precio": "$5.000" }
+    ]
+  }
 }
